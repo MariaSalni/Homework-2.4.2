@@ -51,7 +51,7 @@ public class StatsService {
     // 5. Кол-во месяцев, в которых продажи были ниже среднего
     public int minThenAverageSales(long[] sales) {
         int numberOfMonth = 0;
-        double averageSale = sumSales(sales) / sales.length;
+        double averageSale = calculateAverage (sales);
         for (long sale : sales) {
             if (sale <= averageSale) {
                 numberOfMonth = numberOfMonth + 1;
@@ -64,7 +64,7 @@ public class StatsService {
     // 6. Кол-во месяцев, в которых продажи были выше среднего
     public int maxThenAverageSales(long[] sales) {
         int numberOfMonth = 0;
-        double averageSale = sumSales(sales) / sales.length;
+        double averageSale = calculateAverage (sales);
         for (long sale : sales) {
             if (sale >= averageSale) {
                 numberOfMonth = numberOfMonth + 1;
